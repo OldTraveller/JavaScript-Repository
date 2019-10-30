@@ -1,0 +1,30 @@
+// IF I WERE TO TYPE IN A PURE ES5 FORMAT !! 
+function sum ( a = 10 , b = 20 , c = 30 ) {
+       var s = a + b + c ; 
+       console.log ( "TEH SUMS IS " , s + b ) ; 
+};
+
+// OR EVEM OLDER CODES 
+function sum ( a , b , c ) {
+       if ( a === undefined ) a = 10 ;
+       if ( b === undefined ) b = 10 ;
+       if ( c === undefined ) c = 10 ;
+       console.log ( "THE SUM IS : " + ( a + b + c ) ) ; 
+}
+
+// SAME THING I CAN DO USING ECHMASCRIPT 6 ...
+let sumN = ( a = 10 , b = 20 , c = 30 ) => console.log ("The Sum : " + ( a + b + c) ) ; 
+// SINGLE LINE !! 
+
+/* 
+THE DEFAULT PARAMETER TAKES IN VALUES FROM THE LEFT  
+THAT IS THE FIRST VALUE MATCHES FIRST ARGUMENT 
+SECOND VALUE MATCHES SECOND ARGUMENT 
+....
+FIRST UNMATCH OR UNSPECIFIED VALUE TAKES THE DEFAULT VALUE SPECIFIED IN
+THE FUNCTION 
+*/
+sum ( 1 , 2 , 3 ) ; // 6 
+sum ( 2 , 3 ) ; // 35 
+sum () ; // 60
+sum ( 10 , 20 , 1 ) ; // 31 

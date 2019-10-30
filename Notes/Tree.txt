@@ -1,0 +1,17 @@
+Trees
+So far in this book, we have covered some sequential data structures. The first
+non-sequential data structure we covered in this book was the Hash Table. In
+this chapter, you will learn about another non-sequential data structure called
+a tree, which is very useful for storing information that needs to be found easily.
+
+Tree terminology
+A tree consists of nodes with a parent-child relationship. Each node has a parent
+(except for the first node at the top) and zero or more children, as in the
+following figure:
+
+The top node of a tree is called the root (11). It is the node that does not have a
+parent. Each element of the tree is called a node. There are internal
+nodes and external nodes. An internal node is a node with at least one child
+(7, 5, 9, 15, 13, and 20 are internal nodes). A node that does not have children is
+called an external node or a leaf (3, 6, 8, 10, 12, 14, 18, and 25 are leaves).
+

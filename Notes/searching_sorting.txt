@@ -1,0 +1,96 @@
+/* 
+       SORTING ELEMENTS !!! SORT SORT !! MAKE THEM IN ORDER !! 
+       SEARCHING ELEMENTS !! IS THE ELEMENT IS THERE OR NOT ??? 
+*/
+
+// ===========================================================================
+//            SORTING !!!
+// ===========================================================================
+
+// IF WE HAVE A SORTED ARRAY AND WE WANT IT TO BE IN REVERSE ORDER !! 
+// JUST USE THE reverse METHOD 
+let first = [1,2,3,4,5] ; 
+first.reverse() ; 
+console.log ( first ) ;
+
+// NOW TRY SORTING THE ARRAY AGAIN !! 
+first.sort() ; 
+console.log ( first ) ;
+
+// IF YOU HAVE SOME RANDOM SEQUENCE OF NUMBERS YOU CAN REVERSE SORT 
+// THEM BY USING !! 
+let second = [123,2,333,44,76] ; 
+let comparator = ( a , b ) => a - b ; // FOR ASCENDING FIRST - SECOND 
+let comparatordesc = ( a , b ) => b - a ; // FOR DESCENDING !! 
+second.sort( comparator ) ; // WILL SORT IN ASCENDING 
+console.log ( second ) ;
+second.sort( comparatordesc ) ; // WILL SORT IN DESCENDING !!
+console.log ( second ) ; 
+
+// WHILE IN THE REAL WORLD WE DONT HAVE THE PRIMITIVES OF NUMBERS
+// AND STRING TO SORT !! WE HAVE OBJECTS OF CARS , BUS , BRAKES , 
+// STUDENT , PERSON ... AND MANY MORE !! SO HOW DO WE SORT THEM 
+// BASED ON SOME CONDITION !! AGAIN, JUST MAKE SOME COMPARATOR FUNCTION 
+// AND JUST PASS IT TO THE sort FUNCTION !! 
+
+let people = [
+       { name : "ABHISHEK" , marks : 100 } , 
+       { name : "SOMEOTHER" , marks : 99 } , 
+       { name : "YETANOTHER" , marks : 65 } , 
+       { name : "I DONT KNOW" , marks : 33 } , 
+       { name : "LAST GUY" , marks : 89 } , 
+];
+
+people.forEach( person => {
+       console.log ( person.name + " HAS MARKS : " + person.marks ) ;
+});
+// THESE ARE NOT SORTED !! 
+
+// NOW I WILL SORT THEM BASED ON THE MARKS THEY GOT !! 
+// SO FIRST WE MAKE THE COMPARATOR FUNCTION FOR THE OBJECT !! 
+let compareMarks = ( person1 , person2 ) => {
+       return person2.marks - person1.marks ; 
+}; // MORE MARKS TO BE FIRST !! DESCENDING ORDER SORT !! 
+
+// SORT THE PEOPLE ARRAY !! 
+people.sort( compareMarks ) ;
+
+// NOW LETS SEE THE PEOPLE ARRAY !! 
+people.forEach ( person => {
+       console.log ( person.name + " HAS MARKS : " + person.marks ) ; 
+});
+
+// SORTING OF THE STRINGS HAPPENS IN THE LEXICOGRAPHICAL MANNER 
+// AND ASCII VALUES !! a COMES AFTER A !! 
+let stringArr = ["abhi" , "kumar" , "Abhi" , "ABHI" , "KUAR" ] ;
+console.log ( stringArr ) ; 
+stringArr.sort() ; 
+console.log ( stringArr ) ; // NOTE : ABHI COMES BEFORE Abhi
+                            // FIRST SAME ? COMPARE THE NEXT !! 
+
+// ===========================================================================
+//            SEARCHING !! 
+// ===========================================================================
+
+// WHAT ALL METHODS WE KNOW TO DETERMINE WHETER AN ELEMENT IS THERE IN THE 
+// ARRAY OR NOT ?? find , findIndex , indexOf , lastIndexOf 
+
+let searching = [1,2,3,4,5,8,9,10] ; 
+// THE find METHOD RECIEVES A CALLBACK function AND RETURNS ONLY ELEMENTS
+// THAT SATISFY THE CONDITION THAT SATISFY THE ONE SPECIFIED IN THE CALLBACK !!
+// CALLBACK( element , index , array ) THE ELEMENT CAN BE USED TO PROVIDE PROPERTIES 
+// TO BE SATISFIED !!  
+
+let callback = ( ele , index , array ) => {
+       return ele == 2 ;
+}
+console.log(searching.findIndex( callback )); // RETURNS THE INDEX !! 1 HERE !!     
+
+// USING THE includes FUNCTION ( ES2016/ES7 ) 
+if ( searching.includes(5) ) console.log ( "5 IS THERE !! " ) ; 
+else console.log ( "5 IS NOT THERE !! " ) ;
+
+
+// ALL THE CODE THAT I AM TYPING HERE IS A VALID JAVASCRIPT CODE !! 
+// AND MORE ORIENTED TOWARDS THE NEWER ECMA STANDARDS !! 6 AND 7 
+// OR THE ES2015 OR ES2016

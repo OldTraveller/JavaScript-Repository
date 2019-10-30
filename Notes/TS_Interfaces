@@ -1,0 +1,49 @@
+INTERFACES IN TYPESCRIPT KIND OF BEHAVE MUCH SIMILAR TO JAVA,
+C++ OR C# !! ITS LIKE A CONTRACT THAT MUST BE ESTABLISHED 
+BETWEEN THE CLASS IMPLEMENTING THE INTERFACE !! 
+THAT IF YOU ARE IMPLEMENTING ME THEN DEFINE THE METHODS 
+BY YOURSELF !! WHATEVER I HAVE THE DECLARATION OF IN ME !!
+THE INTERFACES IN JAVA ARE PURELY ABSTRACT CLASSES !! 
+
+IN TYPESCRIPT THEY SERVE TWO PURPOSES :- 
+
+interface Student {
+       name : string ,
+       batch : string , 
+       percentage : number 
+}
+
+NOW IF YOU DECLARE SOME FUNCTION IN TYPESCRIPT 
+IT ALLOWS YOU TO SPECIFY THE TYPE ALONG WITH THE PARAMETERS 
+PASSED !! 
+
+function FunctionName ( name : Type ) {
+
+}
+
+EG :-
+
+function displayDetails ( student : Student ) {
+       console.log ( student.name ) ; 
+       console.log ( student.percentage ) ; 
+       console.log ( student.batch ) ; 
+}
+
+IF USING ANY TYPE OF CODE EDITOR !! THEN THIS WILL HELP 
+THE AUTO COMPLETION WHICH THE PLAIN JAVASCRIPT USED TO GET
+CONFUSED TO !! TRY ONCE !! 
+
+TO TEST THE ABOVE FUNCTION :- 
+
+const John = { name : "SOEMTHING" , batch : "CSE" , percentage : 1000 } ; 
+const Mary = { name : "SOEMTHING" , batch : "CSE" , percentage : 1000 , some : "asdfasdf" } ; 
+
+printName( John ) ; 
+printName( Mary ) ;
+
+NOTE THE SECOND ONE :- IT HAS SOEMTHING MORE THAN THE Student DEFINES 
+NOW HERE COMES THE STRONG AND POWERFUL CONCEPT IN TYPESCRIPT 
+CALLED THE DUCK TYPING !! 
+
+IF IT WALKS LIKE A DUCK , IF IT QUACKS LIKE A DUCK THEN ITS A DUCK !! 
+

@@ -1,0 +1,114 @@
+/* OBJECT ORIENTED PROGRAMMING IN JS IMPORTANT STUFF */
+
+/* 
+       IN THE EARLIER SYNTAXES WE COULD DECLARE THE CLASSES 
+       WITH THE HELP OF FUNCTIONS !! WEIRD BUT TRUE 
+       WE USED TO DO IT IN THE FOLLOWING MANNER !! 
+*/
+
+function Book( name , isbn ) {
+       this.name = name ; 
+       this.isbn = isbn ; 
+}
+
+Book.prototype.printTitle = function() {
+       console.log ( "TITLE : " + this.name ) ; 
+};
+
+/*  
+       WE CAN SIMPLIFY THIS WHOLE THING OF REMEMBERING 
+       TO THE MUCH SIMPLER AND MUCH MORE KNOWN WAY OF 
+       MAKING CLASSES :- USING THE class KEYWORD !! 
+*/
+
+class Books {
+       constructor ( title , isbn ) {
+              this.title = title ; 
+              this.isbn = isbn ; 
+       }
+
+       printDetails() {
+              console.log ( "TITLE : " + this.title ) ; 
+              console.log ( "ISBN : " + this.isbn ) ; 
+       }
+}; // DOESN'T MATTER IF YOU PUT OR NOT !! 
+
+newBook = new Books( "POWER OF SUBCONSIOUS" , 123123 ) ;
+newBook.printDetails() ;
+
+/* 
+       NOTICE THE new KEYWORD HERE !! WHICH DYNAMICALLY ALLOCATES 
+       MEMORY AS AND WHEN THE OBJECTS ARE ASSIGNED !! 
+*/
+
+/* 
+       NOW WHEN THE CLASSES ARE THERE THEN INHERITANCE SHOULD 
+       DEFINITELY BE THERE !! AND YES !! IF YOU ARE FAMILIAR WITH 
+       JAVA SYNTAX THEN YOU WONT FIND MUCH DIFFERENCCE HERE !! 
+*/
+
+class First {
+       constructor ( first ) {
+              this.first = first ; 
+       }
+}
+
+class Second extends First {
+       constructor ( first , second ) {
+              super ( first ) ; 
+              this.second = second ; 
+       }
+
+       printDetails() {
+              console.log ( "FIRST : " + this.first ) ; 
+              console.log ( "SECOND : " + this.second ) ;
+       }
+}
+
+secondObject1 = new Second( "ABHISHEK RAI" , "SOEMTHING" ) ; 
+secondObject1.printDetails() ;
+/* console.log( printDetails() ) ;  DONT TRY THIS WAY !! */
+
+/* 
+       WELL THE CONCEPT OF ENCAPSULATION IS NOT PRESENT IN JAVASCRIPT 
+       COMPLETELY HOWEVER A VAGUE VERSION OF IT CAN BE IMPLEMENTED 
+       USING A _ IN FRONT OF THE VARIABLE NAMES IN HERE !! 
+
+       JUST PRECEDING THE CLASS ATTRIBUTE WITH A UNDERSCORE MAKES IT
+       FEEL LIKE THE ATTRIBUTE IS PRIVATE !! 
+       ENCAPSULATION CONCEPT IN JAVASCRIPT IS NOT A STRONG ONE COMPARED
+       TO OTHER LANGUAGES SUCH AS JAVA OR C++ ETC !! 
+
+       WITH THE HELP OF GETTERS AND SETTERS WE CAN GET AND SET THE VALUES 
+       OF THE OBJECTS OUT THERE !! 
+       FOR GETTER SIMPLY PREPEND THE KEYWORD get 
+       FOR SETTER -------------------------- set 
+
+       FOR EG :-
+*/
+
+class First2 {
+       constructor ( first ) {
+              this._first = first ; 
+       }
+
+       get getFirst() {
+              return this._first ; 
+       }
+
+       set setFirst( otherFirst ) {
+              this._first = otherFirst ;
+       }
+
+       printDetails() {
+              console.log ( "THE FIRST : " + this._first ) ; 
+       }
+}
+
+first = new First2( "ABHISHEK" ) ; 
+first.printDetails() ;
+first._first = "SOMETHING ELSE " ; 
+first.printDetails() ; 
+
+// NOTE : WE ARE STILL ABLE TO ACCESS THE _first HERE ! THEN HOW IS IT PRIVATE ? 
+

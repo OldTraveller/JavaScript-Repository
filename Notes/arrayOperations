@@ -1,0 +1,135 @@
+/* ARRAY OPERATIONS IN JAVASCRIPT !!  */
+
+// DECLARATIONS !! 
+let arr1 = [] ; // EMPTY ARRAY 
+let arr2 = new Array() ; // EMPTY ARRAY 
+let arr3 = new Array( 1 , 2 ) ; // ELEMENTS AS : 1 , 2 
+let arr4 = new Array(7) ; // SIZE 7 
+
+let something = [1,2,3,4,5] ; 
+
+// LOOPING 
+for ( let i = 0 ; i < something.length ; i++ ) {
+    console.log ( something[i] ) ; 
+}
+
+// LOOPING USING THE FOR-EACH STYLE 
+something.forEach( ele => {
+    console.log ( ele ) ; 
+});
+
+// FIBONACCI USING DP !! 
+let fibo = [0,1] ; 
+for ( let i = 2 ; i < 20 ; i++ ) {
+    fibo[i] = fibo[i-1] + fibo[i-2] ; 
+}
+console.log ( fibo ) ; // PRINTS THE WHOLE ARRAY AS OBJECT !
+
+console.log ( something ) ; // PRINTS THE WHOLE OBJECT !! 
+something.push( 1231231 ) ; // ADDS TO THE END !! 
+console.log ( something ) ; // PRINTS THE WHOLE OBJECT !! 
+
+something.unshift( -1 ) ; // INSERT IN THE BEGINNING ! 
+console.log ( something ) ; // PRINTS THE WHOLE OBJECT !! 
+
+// TO REMOVE THE ELEMENT FROM THE END !! 
+// POP REMOVES EXACTLY ONE ELEMENT FROM THE END !! 
+// EVEN IF EMPTY NO PROBLEM !! 
+something.pop() ; 
+fibo.pop() ; 
+
+// REMOVING THE FIRST ELEMENT IS NOT EASY AS IT SEEMS TO BE 
+// WE HAVE TO COPY THE ENTIRE ELEMENTS TO ONE POSITION BEFORE
+// LIKE SAY FOR EXAMPLE WE HAVE AN ARRAY SOMETHING LIKE -
+// [ 123 ][ 234 ][ 567 ][ 890 ]
+// AFTER REMOVING WE MUST HAVE 
+// [ 234 ][ 567 ][ 890 ][ UNDEFINED ]
+// TO ELIMINATE THIS UNDEFINED ALSO WE NEED TO COPY 
+// ALL THE ELEMENTS TO A NEW ARRAY WHICH IS O(n) OPERATION
+// IN ONE STEP JUST TAKE IN THE ARRAY AND COPY ALL THE ( i + 1 )th
+// ELEMENTS TO i TH POSITION IN NEW ARRAY !! 
+function reIndex( prevArray ) {
+    const newArray = [] ;
+    for ( let i = 0 ; i < prevArray.length ; i++ ) {
+        newArray[i] = prevArray[i+1] ; 
+    }
+    return newArray ; 
+}
+
+// OTHERWISE IF YOU WANT TO PRESERVE THE PREVIOUS ARRAY 
+// WE HAVE TO BEAR WITH THE UNDEFINED TERM !
+// WE EXPLICITLY ASSIGN IT AN UNDEFINED VALUE SINCE 
+// TO ABIDE BY THE DEFINITION OF REMOVING AND NOT DUPLICATING
+// ANY ELEMENT IN THE ARRAY ! 
+let prevArray = [ 1 , 2 , 3 , 4 ] ; 
+for ( let i = 0 ; i < prevArray.length - 1 ; i++ ) {
+    prevArray[i] = prevArray[i+1] ; 
+}
+prevArray[prevArray.length] = undefined ; 
+console.log ( prevArray ) ;
+
+// OR MORE EASILY USE THE SHIFT METHOD !! 
+prevArray.shift() ; 
+// shift ALSO WORKS THE WAYS SHOWN ABOVE INTERNALLY !! 
+// BUT ITS MORE EASY TO REMEMBER AND IMPLEMENT ! 
+// EG :- 
+
+let someArray = [ -1 , 0 , 1 , 2 , 3 ] ; 
+console.log ( someArray ) ;
+someArray.shift() ; 
+console.log ( someArray ) ;
+
+// TO REMOVE MULTIPLE ELEMENTS FROM FRONT WHAT CAN U DO ?? 
+// SAY FOR EG - 2 ELEMENTS !! 
+for ( let i = 0 ; i < 2 ; i++ ) {
+    someArray.shift() ; 
+}
+console.log ( someArray ) ;
+
+// TO ADD/REMOVE AT POSITION NOT IN THE START OR END WE HAVE 
+// SPLICE FUNCTION !! 
+// splice( position , NumberOfElementsToRemove , ... Elements to add )
+someArray.splice( 2 , 0 , 123 , 234 , 435 , 546 ) ; 
+someArray.splice( 2 , 1 ) ; // REMOVE AN ELEMENT ! 
+
+/* PRETTY MUCH IT !! WHAT WE NEED FOR MOST OF THE ARRAY OPERATIONS !!  */
+
+
+/* DO WE HAVE MULTIDIMENSIONAL ARRAY IN JS ??? */
+
+/* 
+THE ANSWER IS - NO !! BUT WE CAN CONSTRUCT MULTI-DIMENSIONAL
+ARRAY WITH THE COMBINATION OF SINGLE DIMENSIONAL ARRAYS 
+DECLARE A SINGLE DIMENSIONAL ARRAY !! 
+EACH ELEMENT OF THE ARRAY IS AN ARRAY !! 
+NOW WE HAVE A MULTI-DIMENSIONAL KIND OF ARRAY !! 
+*/
+
+let arr = [] ; 
+arr[0] = [1,2,3] ;
+arr[1] = [4,5,6] ; 
+arr[2] = [7,8,9] ;
+
+console.log ( arr ) ; // SHOWS HOW ITS REPRESENTED !! 
+
+// TO ITERATE OVER !! 
+for ( let i = 0 ; i < arr.length ; i++ ) {
+    for ( let j = 0 ; j < arr[i].length ; j++ ) {
+        console.log ( arr[i][j] ) ; 
+    }
+}
+
+// MORE THAN 2 DIMENSIONS ??? OK ALRIGHT LET ME SEE !! 
+let cube = [] ;
+
+for ( let i = 0 ; i < 3 ; i++ ) {
+    cube[i] = [] ; 
+    for ( let j = 0 ; j < 3 ; j++ ) {
+        cube[i][j] = [] ;
+        for ( let k = 0 ; k < 3 ; k++ ) {
+            cube[i][j][k] = ( i + j + k ) ; 
+        }
+    }
+}
+
+console.log ( cube ) ;

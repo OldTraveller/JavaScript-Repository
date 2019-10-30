@@ -1,0 +1,57 @@
+/* 
+       IMPLEMENTING THE STACK DATA-STRUCTURE IN JS !!
+*/
+
+/* 
+TO IMPLEMENT THE STACK WE CREATE A CLASS FOR A STACK !! 
+THE SET OF FUNCTIONALITIES THAT WE WILL PROVIDE TO THE STACK WILL BE :- 
+push(element) => PUSH ELEMENT TO THE TOP OF THE STACK !! 
+pop() => REMOVES THE ELEMENT FROM THE TOP !! AND RETURNS THE ELEMENT !!
+peek() => SEE THE TOP ELEMENT !! PEEK Hmmm ... 
+isEmpty() => CHECK WHETHER THE STACK IS EMPTY ! 
+clearAll() => REMOVE EVERYTHING FROM THE STACK 
+getSize() => HOW MANY ELEMENTS PRESENT IN THE STACK !! 
+*/
+
+class Stack {
+       constructor() { this.elements = [] ; }
+       push( element ) { this.elements.push( element ) ; }
+       pop() { return this.elements.pop() ; }
+       peek() { return this.elements[this.elements.length - 1]; }
+       isEmpty() { return this.elements.length == 0 ; }
+       getSize() { return this.elements.length ; } 
+       clearAll() { this.elements = [] ;}
+       displayStack() {
+              for ( let i = this.elements.length - 1 ; i >= 0 ; i-- ) {
+                     console.log ( "|| " + this.elements[i] + " ||" ) ; 
+              }
+       }
+}
+// THIS IMPLEMENTATION OF STACK IS VERY PLAIN ONE !! 
+// YOU CAN ADD YOUR EDGE CASES LIKE WHAT IF WE POP WHEN THE STACK IS EMPTY !! 
+// AND ALL !
+
+stack = new Stack() ; 
+console.log ( "IS THE STACK EMPTY ? " + stack.isEmpty() ) ; 
+for ( let i = 0 ; i < 11 ; i++ ) stack.push( i ) ; 
+console.log ( "THE SIZE OF THE STACK IS  " + stack.getSize() ) ; 
+console.log ( "TOP ELEMENT : " + stack.peek() ) ; 
+console.log ( "THE ELEMENT POPPED IS : " + stack.pop() ) ; 
+console.log ( "THE SIZE OF THE STACK IS  " + stack.getSize() ) ; 
+console.log ( "NOW THE TOP IS : " + stack.peek() ) ; 
+
+// PROBLEM USING A STACK DATA-STRUCTURE !! 
+// REVERSE A STRING USING STACK !! 
+let str = "HEY THERE MY NAME IS ABHISHEK" ; 
+helperStack = new Stack() ; 
+for ( let i = 0 ; i < str.length ; i++ ) {
+       helperStack.push( str.charAt(i) ) ; 
+}
+helperStack.displayStack() ; 
+console.log ( "NOW PRINTING THE STACK ELEMENT IN REVERSE ORDER !! " ) ; 
+reversed = "" ; 
+for ( let i = 0 ; !helperStack.isEmpty() ; i++ ) {
+       reversed += ( helperStack.pop() ) ; 
+}
+console.log ( reversed ) ; 
+

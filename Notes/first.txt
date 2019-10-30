@@ -1,0 +1,25 @@
+In JavaScript,  true  and  false  are a little bit tricky. In most languages, the boolean
+values  true  and  false  represent the true/false results. In JavaScript, a string such
+as  Packt  evaluates to  true .
+
+
+Template literals
+Template literals are a nice functionality because we can create strings without
+the need to concatenate the values.
+For example, consider the following examples written with ES5:
+const book = { 
+ name: 'Learning JavaScript DataStructures and Algorithms' 
+}; 
+console.log('You are reading ' + book.name + '.,\n and this is a new line\n and so is this.'
+We can improve the syntax of the previous  console.log  output with the following
+code:
+console.log(`You are reading ${book.name}., 
+ and this is a new line 
+ and so is this.`); 
+Template literals are enclosed by backticks ( ` ). To interpolate a variable value,
+we will simply set the variable value inside a dollar sign and curly braces ( ${} ),
+as we did with  book.name .
+Template literals can also be used for multiline strings. There is no need to use  \n
+anymore. Simply hit Enter on the keyboard to take the string to a new line, as
+was done with  and this is a new line  in the previous example.
+This functionality will be very useful in our examples to simplify the output!

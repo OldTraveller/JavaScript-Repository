@@ -1,0 +1,74 @@
+TYPESCRIPT IS AN OPEN SOURCE GRADUALLY TYPED SUPERSET OF 
+JAVASCRIPT CREATED AND MAINTAINED BY MICROSOFT !! 
+
+Among
+its main capabilities is providing typing to JavaScript variables. Types in
+JavaScript enable static checking, thus making it easier to refactor the code and
+find bugs. And at the end, TypeScript compiles to simple JavaScript code!
+
+Regarding the scope of this book, with TypeScript, we can use some object-
+oriented concepts that are not available in JavaScript such as interfaces and
+private properties (this can be useful when working with data structures and
+sorting algorithms). And of course, we can also leverage the typing functionality,
+which is very important for some data structures.
+
+INSTALL IT USING :-
+       npm install -g typescript
+
+TYPESCRIPT IS ULTIMATELY COMPILED TO JS CODE !! PURE ES5 CODE 
+TYPE NAME ITSELF HAS THE WORD TYPE !! 
+WHICH LETS US DECLARE THE TYPES OF THE DIFFERENT VARIABLES 
+INSIDE THE PROGRAMS !! 
+
+WHEN PROGRAMMING NORMALLY IN JS WE USE THE WORDS :-
+let const var etc ! 
+WE DO SOMEWHAT THE SAME TYPE OF CODING BUT THEN WHEN 
+WE COMPILE IT USING THE TYPESCRIPT COMPILER THEN WE GET 
+TO KNOW IF WE HAVE MADE SOME IMPROPER INITIALIZATION TO THE
+DIFFERENT DATATYPES !! 
+EG :-
+       let first = 10 ; // NUMBER 
+       first = "ABHISHEK" ; // A STRING ? 
+WHEN COMPILED USING THE TSC COMPILER :
+       tsc something.ts 
+YOU GET A WARNING BEFOREHAND ( HOWEVER IT COMPILES SUCCESFFULY 
+TO PRODUCE A FILE !! ) ; 
+
+IN SHORT TYPESCRIPT DOES ALL THE TYPE AND ERROR CHECKING !! 
+BUT IT DOES NOT PREVENT THE COMPILER TO PRODUCE THE JS FILE !! 
+
+SO DEVELOPERS USUALLY WRITE THE THING IN TS AND THEN COMPILE IT TO 
+JS USING TYPESCRIPT !!
+
+SOME EXAMPLES OF TYPESCRIPT CODE FOUND CAN BE :-
+
+let first : number = 10 ; 
+let second : string = "ABHISHEK" ; 
+let third : boolean = true ; 
+let fourth : boolean = !true ; 
+
+ETC !! 
+
+HOWEVER WRITING THE TYPES IS REDUNDANT HERE SINCE AUTOMATICALLY 
+THE VARIABLES GET TO KNOW THE TYPE OF THEMSELVES !! 
+
+let first = 100.00 ; // number !! 
+let third = false ; // bool !! 
+
+BUT WHY DO WE NEED THE BEFORE SYNTAX ? 
+TO MAKE THE UNINITIALIZED VARIABLES HAVE THEIR TYPES !! 
+EG:-
+let something : number ; 
+
+THOUGH UNINITIALIZED something HAS ITS TYPE !! 
+IF WE DONT INITIALIZE IT WE HAVE THE TYPE AS : any 
+
+THATS PRETTY MUCH THE BASICS OF TS !! 
+WE HAVE THE interfaces CONCEPTS IN TS !! THAT WE SHALL SEE SOME
+OTHER TIME !! 
+
+
+
+
+
+

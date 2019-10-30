@@ -1,0 +1,47 @@
+/* IMPLEMENTATION OF THE QUEUE ! */
+
+class Queue {
+       constructor() { this.q = [] ; } 
+       push(ele) { this.q.push(ele) ; } 
+       isEmpty() { return this.q.length == 0 ; } 
+       peek() {
+              if ( this.isEmpty() ) return undefined ; 
+              else {
+                     return this.q[0] ; 
+              }
+       }
+       pop() {
+              if ( this.isEmpty() ) return undefined ; 
+              else {
+                     let frontEle = this.peek() ; 
+                     this.q.shift() ; 
+                     return frontEle ; 
+              }
+       }
+       displayQueue() {
+              if ( this.isEmpty() ) {
+                     console.log ("THE QUEUE IS EMPTY !! ") ; 
+              } else {
+                     for ( const i of this.q ) {
+                            console.log ( i ) ; 
+                     }
+              }
+       }
+       getSize() { return this.q.length ; } 
+}
+
+queue = new Queue() ; 
+for ( const i in [1,2,3,4,5,6] ) {
+       queue.push(i) ; 
+       console.log ( queue ) ; 
+}
+
+console.log ( "QUEUE IS : " + ( queue.isEmpty() ? "EMPTY" : "NOT EMPTY" ) )  ;
+
+for ( let i = 0 ; i < 3 ; i++ ) {
+       console.log ( "THE ELEMENT REMOVED IS : " + queue.pop() ) ; 
+       console.log ( queue ) ; 
+}
+
+console.log ( "NOW THE FRONT ELEMENT IS : " + queue.peek() ) ; 
+console.log ( "THE QUEUE SIZE IS : " + queue.getSize() ) ; 

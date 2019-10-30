@@ -1,0 +1,95 @@
+WE HAVE A CONCEPT CALLED ARRAY DESTRUCTURING IN JAVASCRIPT !! 
+WHERE IN WE CAN ASSIGN MULTIPLE VALUES TO MULTIPLE VARIABLES 
+AT ONCE ! 
+EVEN IN PYTHON WE CAN DO IT USING :-
+a , b , c = 10 , 20 , 30 
+BUT THIS IS NOT ARRAY DESTRUCTURING !! 
+SO THE CORRESPONDING VARIABLES BE ASSIGNED TO THE CORRESPONDING VALUESS !! 
+
+IN JAVASCRIPT WE DO IT USING ARRAY DESTRUCTURING !! 
+
+let [a,b,c] = [1,2,3] 
+WE SEE SIMILAR TYPES ON BOTH SIDES !! THE ARRAY TYPE 
+JUST ASSIGN THE ELEMENTS POSITION WISE !! a = 1 , b = 2 , c = 3 
+
+// ARRAY DESTRUCTURING EXAMPLE !! 
+let [ a , b , c ] = [ 10 , 20 , 30 ] 
+
+console.log ( " A : " , a ) ;
+console.log ( " B : " , b ) ;
+console.log ( " C : " , c ) ;
+
+/* 
+       THE PREVIOUS THING IS EQUIVALENT TO
+       let a = 10 ; 
+       let b = 20 ;
+       let c = 30 ; 
+       
+       WE CAN ALSO USE ARRAY DESTRUCTURING TO SWAP TWO VALUES 
+       WHICH OTHERWISE WE DO USING :- 
+       let temp = a ; 
+       a = b ; 
+       b = temp ; 
+
+       [a,b] = [b,a] 
+*/
+
+let first = 10 ;
+let second = 20 ; 
+
+let printValues = ( a , b ) => console.log ( "A : " + a + " B : " + b )  ; 
+
+printValues( first , second ) ; 
+
+[ first , second ] = [ second , first ] ; // SWAP VALUES 
+
+printValues( first , second ) ; 
+
+/* 
+       THIS WAS AN EXAMPLE OF ARRAY DESTRUCTURING !! 
+       HOWEVER BUILDING REAL WORLD APPLICATIONS WE ENCOUNTER OBJECT MORE
+       THAN ANYTHING ELSE, 
+       SO A YET ANOTHER CONCEPT THAT COMES INTO PICTURE IS :-
+              "Property Shorthand" 
+
+*/
+
+let [ name , branch ] = [ "ABHISHEK RAI" , "CSE FIFTH SEM" ] ;
+// ABOVE IS ARRAY DESTRUCTURING !! 
+
+let student = { name , branch } ; 
+
+console.log ( student.name ) ; 
+
+/*  
+SHORTHAND METHOD NAMES ARE ALSO COMMON THESE DAYS IN ECMA6
+WHERE IN THE PROPERTIES RELATED TO OBJECTS CAN BE ASSIGNED TO 
+THE OBJECTS IN THEIR DEFINITION !! 
+*/ 
+
+// First Way 
+let helloWorld = {
+       a : 10 , 
+       b : 20 , 
+       printHelloWorld() {
+              console.log ( "HELLO WORLD !! " ) ; 
+       }
+}
+
+// Second Way 
+let helloWorld2 = {
+       a : 100 , 
+       b : 200 , 
+       printHelloWorld : function( a , b ) {
+              console.log ( "HELLO WORLD !! " ) ; 
+       }
+}
+
+// Third Way !! 
+let helloWorld3 = {
+       a : 10 , 
+       b : 100 , 
+       printHelloWorld : () => console.log ( "HELLO WORLD !! " ) 
+}
+
+/* CHOOSE WHATEVER YOU LIKE !!  */

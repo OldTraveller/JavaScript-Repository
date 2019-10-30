@@ -1,0 +1,21 @@
+let book = {
+       name : "POWER OF SUBCONSIOUS MIND !! " , 
+       price : 100 , 
+       author : "JOSEPH MURPHY" ,
+       marks : {
+              maths : 100 , 
+              chem : 100 ,
+              physics : 95
+       } ,
+
+};
+
+arr = [ 1,2,3,4,5,6 ] 
+
+let cube = ( arr ) => {
+       arr.forEach( ele => {
+              console.log ( "THE CUBE IS : " + ele*ele*ele ) ; 
+       });
+};
+
+cube( [2,3,4,10] ) ; 

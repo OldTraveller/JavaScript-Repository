@@ -1,0 +1,36 @@
+/* NOW THE EXPONENTIATION OPERATOR !! */
+
+/* 
+CALCULATING THE POWER OF SOMETHING IS NOT A BIG TASK
+IF IN JAVA JUST USE Math.pow( first , power ) ; 
+SIMPLE !! 
+BUT DO WE EVEN NEED TO USE THE LIBRARY FUNCTION TO GET THE POWER ?
+JAVASCRIPT CAN DO IT IN TWO STARS !! TWO STARS ? YES TWO STARS !! 
+THE EXPONENTIATION OPERATOR :- ** 
+WHERE 2 ** 3 : 2 TO THE POWER 3 = 8 
+      3 ** 2 : 3 TO THE POWER 2 = 9 ETC !! 
+*/
+
+/* 
+TO CALULATE THE VOLUME OCCUPIED BY A SPHERE 
+THE FORMULA WOULD BE : ( 4 / 3 )*PI*( r cube ) 
+*/
+
+const PI = 3.141592654 ;
+
+let radius = 10 ; // radius 
+let volume = ( 4/3 )*( PI )*( radius**3 ) ; // NOTICE THE USE ** 
+console.log ("THE VOLUME OF THE SPHERE IS : " , volume ) ; 
+
+/* 
+THE POWERS OF TWO ARE VERY COMMON THESE DAYS !! IF YOU ARE 
+A COMPUTER SCIENCE STUDENT YOU NEED TOO REMEMBER THE POWER OF TWO 
+TABLE !! WHY DONT WE PRINT THE ENTIRE TABLE 
+*/
+
+let base = 2 ;
+for ( let i = 0 ; i < 21 ; i++ ) {
+       console.log ( " 2 POWER : " , i , " IS " , base ** i ) ; 
+}
+
+// SIMPLE TABLE IN JUST FEW LINES !! 

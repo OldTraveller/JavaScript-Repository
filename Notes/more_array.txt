@@ -1,0 +1,67 @@
+/* 
+MORE ON ARRAYS !! READ THE FIRST TWO WORDS CONTINUOUSLY 
+SOUNDS VULGAR !! ANYWAYS !!  
+
+JAVASCRIPT ARRAYS ARE TOO SWAG A THING !! 
+THEY PROVIDE MORE FUNCTIONS THAN THE FUNCTIONS AVAILABE TO
+THE ARRAYS OF THE OTHER PROGRAMMING LANGUAGES !! 
+*/
+
+// FIRST ONE IS TO CONATENATE ONE OR MORE ARRAYS TOGETHER !! 
+let arr1 = [ 1,2,3,4,5 ] ; 
+let arr2 = [ 99,100,101,102] ; 
+let a = 12312312 ; 
+// concat FUNCTION HELPS YOU CONCATENATE THE ELEMENTS AND ARRAYS
+// TO THE ARRAY FROM WHICH CONCAT IS CALLED !! 
+arr2 = arr2.concat( arr1 , a , [30,40,50] , 1223232 ) ; 
+console.log ( arr2 ) ;
+
+// TO REMOVE ALL THE TERMS NOT SATISFYING SOME CONDITIONS !! 
+let toRemoveAllEven = ele => ele % 2 != 0 ;
+arr1 = [1,2,3,4,5,6,7,8] ; 
+arr1 = arr1.filter( toRemoveAllEven ) ; 
+console.log ( arr1 ) ; // NOW THE ARR1 WILL BE 1,3,5,7
+
+// USING FOR EACH TO ITERATE OVER THE ELEMENTS !! 
+// BUT BEFORE THAT THE NORMAL WAY OF DOING IS :-
+for ( let i = 0 ; i < arr1.length ; i++ ) {
+       console.log ( arr1[i] ) ; 
+}
+// THE OTHER WAY IS THE FOREACH STYLE OF ITERATING !! 
+arr1.forEach( ele => console.log ( ele ) ) ; 
+
+// NEWEST METHOD TO ITERATE OVER THE ARRAY IS :- 
+for ( let i of arr1 ) {
+       console.log ( i ) ; 
+}
+// YOU CAN USE in ALSO INSTEAD OF 'of' 
+for ( const i in arr1 ) {
+       console.log ( i ) ;
+}
+/* 
+       THESE ARE SOME MORE ARRAY FUNCTIONALITIES !! 
+       NOW THE ES6/ES2015 SYNTAX HAS SOME MORE ARRAY 
+       FUNCTIONALITY ADDED TO THEM !! 
+*/
+
+// WE CAN USE ITERATOR TO ITERATE OVER THE ELEMENTS !! 
+let newIter = [1,2,3,4,5,6,7] ; 
+let iter = newIter[Symbol.iterator]() ; 
+for ( const i of iter ) {
+       console.log ( "USING ITER  " ,  i ) ; 
+}
+
+// TO COPY AN ARRAY FROM AN EXISTING ARRAY
+// HERE WE WILL COPY THE newIter ARRAY !! 
+let copiedArray = Array.from( newIter ) ; 
+console.log ( copiedArray ) ;
+
+// TO FILL THE ARRAY WITH SOME VALUES !! 
+let fillDemo = Array(6) ; 
+console.log( fillDemo ) ; // < 6empty items >
+fillDemo.fill(0) ; // [0,0,0,0,0,0]
+console.log( fillDemo ) ;
+
+// BOTH CAN BE DONE IN A SINGLE LINE : THE INITIALIZATION AND FILLING 
+let initAndFill = Array(6).fill(123) ; 
+console.log ( initAndFill ) ;
